@@ -11,157 +11,131 @@ int main(){
   int index = 0;
   cout << "num:" << endl;
   cin >> index;
-  auto start = std::chrono::system_clock::now();
+  auto start = std::chrono::high_resolution_clock::now();
 
   switch(index){
   case 1:
   {
-    string s, t;
-    string str("aaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(?:(?:(?:a)*)*)*c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaac", "(?:(?:(?:a)*)*)*c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 2:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaac", "a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?a?c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 3:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("a+a+a+a+a+a+a+a+a+a+a+a+a+a+c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaac", "a+a+a+a+a+a+a+a+a+a+a+a+a+a+c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 4:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(?:a+)+c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaac", "(?:a+)+c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 5:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(?:(?:a)+)+c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaac", "(?:(?:a)+)+c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 6:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(?:(?:aa)+)+c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac", "(?:(?:aa)+)+c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 7:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("((a)+)+c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaac", "((a)+)+c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 8:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(?:(?:(?:aa)+)+)+c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaac", "(?:(?:(?:aa)+)+)+c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 9:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(((aa)+)+)+c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaac", "(((aa)+)+)+c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 10:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaac", "(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)(?:a|a)c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 11:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac", "(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)(?:aa|a)c"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
     break;
   }
   case 12:{
-    string s, t;
-    string str("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac");
-    re2::StringPiece input(str);
-    re2::RE2 re("(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)c");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac","(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)(aa|a)c"))
+        cout << "Matched.";
+        else
+        cout << "UnMatched.";
+    }
     break;
   }
   default:{
-    string s, t;
-    string str("nez");
-    re2::StringPiece input(str);
-    re2::RE2 re("...");
-    if(re2::RE2::FullMatch(input, re, &s, &t))
-      cout << "s:" << s << " t:" << t << endl;
-    else
-      cout << "UnMatched." << endl;
+    for(int i = 0; i < 10000; ++i){
+      if(re2::RE2::FullMatch("nez", ".*"))
+        cout << "Matched.";
+      else
+        cout << "UnMatched.";
+    }
   }
   }
 
-  auto end = std::chrono::system_clock::now();
+  auto end = std::chrono::high_resolution_clock::now();
 
-  cout << "Time:" << std::chrono::duration_cast<chrono::microseconds>(end-start).count() << "[us]" << endl;
+  cout << endl << "Time:" << std::chrono::duration_cast<std::chrono::microseconds>((end-start)/10000).count() << "[us]" << endl;
 
   return 0;
 }
